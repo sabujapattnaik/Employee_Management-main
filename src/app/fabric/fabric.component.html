@@ -1,0 +1,22 @@
+<canvas id="canvas" #htmlCanvas></canvas>
+<div class="col-xl-12">
+    <div class="row">
+        <div class="col-xl-12 text-right">
+            <button data-toggle="tooltip" data-placement="bottom" title="Export to image" type="button" class="btn btn-primary m-1" (click)="rasterize();">
+                <i class="fa fa-download" aria-hidden="true"></i> Export to image</button>
+        </div>
+    </div>
+</div>
+<div class="card-header">Upload image</div>
+<div class="card-body text-center">
+    <img id="testImage" *ngIf="url" class="images-item-upload" [src]="url" (click)="addImageOnCanvas(url);">
+    <input type="file" (change)="readUrl($event);">
+    <br/>
+    <br/>
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-outline-danger btn-sm" (click)="removeWhite(url);">
+                <i class="fa fa-times" aria-hidden="true"></i> Remove</button>
+        </div>
+    </div>
+</div>
